@@ -7,12 +7,16 @@ from pydataset import data
 import os
 
 def show_codeup_dbs():
+    ''' Returns a list of databases in the Codeup SQL server.
+    '''
     url = get_db_url('employees')
     codeup_dbs = pd.read_sql('SHOW DATABASES', url)
     print('List of Codeup DBs:\n')
     return codeup_dbs
 
 def get_titanic_data():
+    '''Returns a dataframe composed of the passengers table from titanic_db in the Codeup SQL server.
+    '''
     filename= 'titanic.csv'
 
     if os.path.exists(filename):
@@ -28,6 +32,8 @@ def get_titanic_data():
     return df
 
 def get_iris_data():
+    '''Returns a dataframe composed of the measurements table from iris_db in the Codeup SQL server.
+    '''
     filename = 'iris.csv'
 
     if os.path.exists(filename):
@@ -47,6 +53,9 @@ def get_iris_data():
     return df
 
 def get_telco_data():
+    '''Returns a dataframe composed of the customers, contract_types, payment_types, and internet_service_types tables 
+    from the telco_churn database in the Codeup SQL server
+    '''
     filename = 'telco.csv'
 
     if os.path.exists(filename):
@@ -67,17 +76,3 @@ def get_telco_data():
     df.to_csv(filename, index=False)
     return df
 
-def get_titanic_data():
-    filename = 'titanic.csv'
-
-    if os.path.exists(filename):
-            print('Reading from CSV file...')
-            return pd.read_csv(filename)
-        
-    url = get_db_url('titanic_db')
-    query = 'SELECT * FROM passengers'
-    print('Getting a fresh copy from SQL db...')
-    df = pd.read_sql(query, url)
-    print('Saving to CSV...')
-    df.to_csv(filename, index=False)
-    return df
