@@ -39,3 +39,13 @@ Initial analytical explorations of the data indicates that a driver of churn may
 'payment_type_Mailed check': (1-true, 0-false)
 'internet_service_type_Fiber optic': (1-true, 0-false)
 'internet_service_type_None': (1-true, 0-false)
+
+### Planning:
+- Data is to be acquired via pandas-read SQL query from acquire.py module, cleaned and prepped with prep.py for analysis and modeling.
+- Data will then be explored and analyzed to identify possible drivers of churn, with accompanying visualizations
+- Findings from exploration will be taken into consideration during construction and training of ML models
+- Once models are built, they will be validated and tested. Evaluation of models to be conducted at each stage.
+- Predictions and prediction probabilities from highest scoring models are to be exported to .csv files.
+
+### Conclusions:
+Customers who used fiber optic internet and paperless billing were found to be the most likely to churn. Recommendations are to promote automated billing solutions for the customer who used paperless billing and to ensure, to the extent possible, that fiber optic internet service is reliable, with promised bandwidth and upload/download speed at least on par with competitors. 
