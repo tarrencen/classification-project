@@ -46,7 +46,7 @@ def prep_alt_titanic(titanic_df):
     '''
     Takes in a pandas DataFrame of the Titanic dataset as acquired and returns a cleaned version of the DF, and train, validate, and test splits
     Args: titanic_df, pandas DF with expected columns and feature names
-    Return: titanic_df_clean and splits of it (train, validate, and test) 
+    Return: alt_titanic_df_clean and splits of it (train, validate, and test) 
     '''
     titanic_df = acq.get_titanic_data()
     titanic_df = titanic_df.drop_duplicates()
